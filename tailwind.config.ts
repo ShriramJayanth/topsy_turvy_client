@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        customDark: "#202020",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
