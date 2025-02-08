@@ -14,7 +14,7 @@ export default function CodeEditor() {
     const verifyToken = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
-        router.push("/login");
+        router.push("/");
         return;
       }
 
@@ -28,16 +28,17 @@ export default function CodeEditor() {
 
         if (!response.ok) {
           localStorage.removeItem("token");
-          router.push("/login");
+          router.push("/");
           return;
         }
 
         const data = await response.json();
+        setCurrentIndex(data.user.problemsSolved);
         setEmail(data.user.email);
       } catch (error) {
         console.error("Error verifying token:", error);
         localStorage.removeItem("token");
-        router.push("/login");
+        router.push("/");
       }
     };
 
@@ -47,6 +48,7 @@ export default function CodeEditor() {
   let langId: Map<string, number> = new Map();
   langId.set("Python", 1);
   langId.set("C++", 2);
+  langId.set("Java",3);
 
   const questions = [
     {
@@ -125,12 +127,16 @@ export default function CodeEditor() {
       });
   
       const data = await response.json();
-      // console.log(data);
+      if(data.status==="Failed"){
+        setOutput(data.message);
+      }
+      else{
       let output="";
       for (let i=0;i<data.outputs.length;i++){
         output+=data.outputs[i]+"\n";
       }
       setOutput(output);
+      }
     } catch (error) {
       console.error("Error submitting code:", error);
     }
@@ -181,6 +187,7 @@ export default function CodeEditor() {
           >
             <option>Python</option>
             <option>C++</option>
+            <option>Java</option>
           </select>
         </div>
       </div>
