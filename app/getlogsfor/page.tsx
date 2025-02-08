@@ -16,7 +16,7 @@ export default function LogsPage() {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await fetch("https://topsy-turvy-server.onrender.com/auth/logs");
+        const response = await fetch("http://localhost:3001/auth/logs");
         const data = await response.json();
         if (response.ok) {
           setLogs(data.logs);

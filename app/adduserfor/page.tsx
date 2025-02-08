@@ -13,7 +13,7 @@ export default function AddUserPage() {
     setError('');
     
     try {
-      const response = await fetch('https://topsy-turvy-server.onrender.com/auth/adduser', {
+      const response = await fetch('http://localhost:3001/auth/adduser', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, phoneNumber }),

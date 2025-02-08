@@ -19,7 +19,7 @@ export default function CodeEditor() {
       }
 
       try {
-        const response = await fetch("https://topsy-turvy-server.onrender.com/auth/protected", {
+        const response = await fetch("http://localhost:3001/auth/protected", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -114,7 +114,7 @@ export default function CodeEditor() {
 
   const handleRun = async () => {
     try {
-      const response = await fetch("https://topsy-turvy-server.onrender.com/code/run", {
+      const response = await fetch("http://localhost:3001/code/run", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -146,7 +146,7 @@ export default function CodeEditor() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("https://topsy-turvy-server.onrender.com/code/submit", {
+      const response = await fetch("http://localhost:3001/code/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
