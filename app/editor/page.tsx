@@ -54,7 +54,7 @@ export default function CodeEditor() {
     {
       id: 1,
       title: "Sum of numbers",
-      description: "Given a bunch of nums, you must print the sum of them.",
+      description: "Given a bunch of nums, you must print the sum of them. The input is given in such a way that, the first line will have N(number of elements) and the next line will have N numbers separated by space.",
       testCases: [
         { input: "4\n1 2 3 4", output: "10" },
         { input: "5\n1 2 3 4 5", output: "15" },
@@ -63,7 +63,7 @@ export default function CodeEditor() {
     {
       id: 2,
       title: "Find Maximum",
-      description: "Given a list of numbers, find the maximum value.",
+      description: "Given a list of numbers, find the maximum value. The input is given in such a way that, the first line will have N(number of elements) and the next line will have N numbers separated by space.",
       testCases: [
         { input: "4\n5 1 9 3", output: "9" },
         { input: "3\n-10 0 5", output: "5" },
@@ -72,16 +72,43 @@ export default function CodeEditor() {
     {
       id: 3,
       title: "Count Even Numbers",
-      description: "Given a list of numbers, count how many are even.",
+      description: "Given a list of numbers, count how many are even. The input is given in such a way that, the first line will have N(number of elements) and the next line will have N numbers separated by space.",
       testCases: [
         { input: "5\n1 2 3 4 5", output: "2" },
         { input: "6\n10 20 30 15 25 35", output: "3" },
       ],
     },
     {
-      id: 4,
+      "id": 4,
+      "title": "Count Vowels in a String",
+      "description": "Given a string, count the number of vowels (a, e, i, o, u). The input will be a single line containing a string.",
+      "testCases": [
+        { input: "hello", output: "2" },
+        { input: "openai", output: "4" },
+      ]
+    },    
+    {
+      "id": 5,
+      "title": "Sum of Digits",
+      "description": "Given a number, find the sum of its digits. The input consists of a single integer N.",
+      "testCases": [
+        { input: "123", output: "6" },
+        { input: "987", output: "24" },
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Check Prime Number",
+      "description": "Given a number N, determine whether it is a prime number or not. A prime number is a number greater than 1 that has no divisors other than 1 and itself. Output 1 if the number is prime, otherwise output 0.",
+      "testCases": [
+        { input: "7", output: "1" },
+        { input: "10", output: "0" },
+      ]
+    },    
+    {
+      id: 7,
       title: "Completed",
-      description: "Congradulations on Completing all the tasks successfully, We love your inverted thinking, all the best for your future endevours.",
+      description: "Congradulations on Completing all the tasks successfully, We love your inverted thinking, all the best for your future endevours. PLEASE CALL A MODERATOR IMMEDIATELY.",
       testCases: [
       ],
     },
