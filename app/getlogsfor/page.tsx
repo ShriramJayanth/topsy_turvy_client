@@ -24,6 +24,7 @@ export default function LogsPage() {
           setError("Failed to fetch logs");
         }
       } catch (err) {
+        alert(err);
         setError("Server error");
       } finally {
         setLoading(false);

@@ -45,7 +45,7 @@ export default function CodeEditor() {
     verifyToken();
   }, [router]);
 
-  let langId: Map<string, number> = new Map();
+  const langId: Map<string, number> = new Map();
   langId.set("Python", 1);
   langId.set("C++", 2);
   langId.set("Java",3);
@@ -119,7 +119,7 @@ export default function CodeEditor() {
     "MediaPlayPause", "AudioVolumeDown", "AudioVolumeUp", "MediaTrackPrevious", "MediaTrackNext", "AltGraph"
   ];
 
-  const handleKeyDown = (event:any) => {
+  const handleKeyDown = (event:React.KeyboardEvent<HTMLTextAreaElement>) => {
     event.preventDefault();
 
     if (blockedKeys.includes(event.key)) {

@@ -1,13 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function AddUserPage() {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
-  const router = useRouter();
 
   const handleLogin = async () => {
     setError('');
@@ -29,8 +27,9 @@ export default function AddUserPage() {
       setEmail("");
       setPhoneNumber("");
 
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      alert(err);
+      setError("error");
     }
   };
 

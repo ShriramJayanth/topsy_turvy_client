@@ -28,8 +28,9 @@ export default function LoginPage() {
       localStorage.setItem('token', data.token);
       router.push('/editor');
 
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      alert(err);
+      setError("error thrown");
     }
   };
 
